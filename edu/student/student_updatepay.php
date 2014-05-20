@@ -9,6 +9,7 @@
 	include_once('../database.php');
 	$batchid = $_GET['batch_id'];
 	$studentid = $_GET['student_id'];
+	$feespaid = 0;
 	$sql = mysql_query("select * from payments where batch_id=$batchid and student_id=$studentid;");
 	while($info = mysql_fetch_array($sql))	{
 		$totalfees = $info['fees_total'];

@@ -39,7 +39,8 @@
 ?>
 <div id="my-tab-content" class="tab-content">
 <?php 
-	$sql1 = mysql_query("select batch.id as batch_id , batch.course_id as course_id from batch,batch_students where batch.id = batch_students.batch_id and batch_students.student_id = $id;");
+	$sql1 = mysql_query("select batch.batch_name as batch_name, batch.id as batch_id , batch.course_id as course_id from batch,batch_students where batch.id = batch_students.batch_id and batch_students.student_id = $id;");
+	//echo "select batch.batch_name as batch_name, batch.id as batch_id , batch.course_id as course_id from batch,batch_students where batch.id = batch_students.batch_id and batch_students.student_id = $id;";
 	while($info1 = mysql_fetch_array($sql1))	{
 ?>
 <div class="tab-pane" id="tab<?php echo $info1['batch_id'];?>" style="margin-left: 125px; padding-bottom: 25px; margin-right: 25px;">
@@ -52,6 +53,9 @@
 	$fee_recieved = 0;
 	$fee_remainings = 0;
 	$payment_method = " ";
+	$totalfee = 0;
+	$total_fee_recieved = 0;
+	$total_fee_remaining = 0;
 	$i = 0;
 	$j=0;
 	$mystr = "Payment not made";

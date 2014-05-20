@@ -38,7 +38,7 @@ Add students to <?php echo $name;?> batch
 <input type="text" id="demo-input-prevent-duplicates" name="student_id" />
 <script type="text/javascript">
         $(document).ready(function() {
-            $("#demo-input-prevent-duplicates").tokenInput("http://localhost/htdocs/edu/studentlist.php", {
+            $("#demo-input-prevent-duplicates").tokenInput("/edu/studentlist.php", {
                 preventDuplicates: true
             });
         });

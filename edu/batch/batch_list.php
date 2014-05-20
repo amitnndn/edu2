@@ -84,6 +84,7 @@ Batch List
 		</div>
 		<div class="modal-body">
 		<?php 
+			$x = 0;
 			$sql2 = mysql_query("select * from student;");
 			while($info2 = mysql_fetch_array($sql2))	{
 				$sql3 = mysql_query("select * from batch_students where batch_id=".$info1['id']." and student_id = ".$info2['id'].";");

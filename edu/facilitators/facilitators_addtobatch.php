@@ -38,7 +38,7 @@ Add <?php echo $name;?> to a Batch
 <input type="text" id="demo-input-prevent-duplicates" name="batch_id" />
 <script type="text/javascript">
         $(document).ready(function() {
-            $("#demo-input-prevent-duplicates").tokenInput("http://localhost/htdocs/edu/batchlist.php", {
+            $("#demo-input-prevent-duplicates").tokenInput("/edu/batchlist.php", {
                 preventDuplicates: true
             });
         });

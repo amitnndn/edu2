@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include_once("../database.php");
 	$id = $_GET['id'];
 	$sql = mysql_query("select * from users where id = $id;");

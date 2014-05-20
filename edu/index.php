@@ -1,8 +1,22 @@
 <?php 
-    include_once("db.php");
-    $a = new database();
-	session_start();
-	if(isset($_SESSION['logged_in']))	{
+    session_start();
+    $_SESSION['db_name'] = "clients";
+    include_once("database.php");
+    $subdomain = array_shift(explode(".",$_SERVER['HTTP_HOST']));
+    $db_name = $subdomain."_edu";
+    $query = "select * from clients where dbname = '$db_name'";
+    $sql = mysql_query($query);
+    if($sql){
+        $n = mysql_num_rows($sql);
+        if($n > 1){
+            header("Location:edu.com");
+        }    
+        else{
+            $_SESSION['db_name'] = $db_name;
+            //mysql_select_db($db_name);
+        }
+    }
+    if(isset($_SESSION['logged_in']))	{
 		if($_SESSION['logged_in']==1)	{
 			header("Location:home.php");
 		}

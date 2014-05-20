@@ -1,4 +1,4 @@
-<?php 
+	<?php 
 	session_start();
 	if(isset($_SESSION['logged_in']))	{
 		if($_SESSION['logged_in'] == 1)	{
@@ -21,13 +21,21 @@ User Add Confirm
 	$email = $_POST['email'];
 	$phone = $_POST['phone'];
 	$role = $_POST['role'];
-	$sql = mysql_query("select * form users where username = $username;");
+	$query = "SELECT * FROM `users` WHERE username = '$username';";
+	//echo $query;
+	$sql = mysql_query($query);
+	if(!$sql){
+		echo mysql_error();
+	}
 	$n = mysql_num_rows($sql);
+	echo "n = $n";
 	if($n >= 1)	{
 		echo "Username already exists, please choose another username.";
 	}
 	else	{
-		$sql1 = mysql_query("insert into users values(default,'$name','$email','$phone','$username','$password',$role);");
+		$query = "insert into users values(default,'$name','$email','$phone','$username','$password',$role);";
+		//echo $query;
+		$sql1 = mysql_query($query);
 		if($sql1)	{
 			echo "User was successfully inserted!";	
 		}

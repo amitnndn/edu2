@@ -26,7 +26,7 @@ Batch Created!
 	$facid = $_POST['facilitator_id'];
 	$sql = mysql_query("insert into batch values(default,'$batchname',$courseid,$facid,'$startdate','$enddate',$starttime,$endtime,1);");
 	if($sql)	{
-		echo "<a href='../student/student_batch.php'>Add Students to this batch</a>";
+		echo "<a href='/edu/student/student_batch.php'>Add Students to this batch</a>";
 	}
 	else 	{
 		echo "ERROR: ".mysql_error();

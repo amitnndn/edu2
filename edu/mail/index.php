@@ -1,5 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/htdocs/edu/mail/PHPMailer-master/class.phpmailer.php';
+session_start();
+require_once $_SERVER['DOCUMENT_ROOT'].'/edu/mail/PHPMailer-master/class.phpmailer.php';
 $mail = new PHPMailer();
 ?>
 <!DOCTYPE html>

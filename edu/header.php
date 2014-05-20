@@ -15,55 +15,55 @@
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			      </a>
-		      <a class="brand" href="/htdocs/edu/home.php">EDU</a>
+		      <a class="brand" href="/edu/home.php">EDU</a>
 		      <div class="nav-collapse collapse">
 		        <ul class="nav">
 					<li class="dropdown">
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Student<b class="caret"></b></a>
 		            <ul class="dropdown-menu">
-		              <li><a href="/htdocs/edu/student/student_list.php">List</a></li>
+		              <li><a href="/edu/student/student_list.php">List</a></li>
 		              <?php if($role == 1 || $role == 2)	{?>	
-		              <li><a href="/htdocs/edu/student/student_form.php">Add</a></li><?php }?>		   
+		              <li><a href="/edu/student/student_form.php">Add</a></li><?php }?>		   
 		            </ul>
 					<li class="dropdown">
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Course<b class="caret"></b></a>
 		            <ul class="dropdown-menu">
-		              <li><a href="/htdocs/edu/course/course_list.php">List</a></li>
+		              <li><a href="/edu/course/course_list.php">List</a></li>
 		              <?php if($role == 1 || $role == 2)	{?>
-		              <li><a href="/htdocs/edu/course/course_form.php">Add</a></li><?php }?>		   
+		              <li><a href="/edu/course/course_form.php">Add</a></li><?php }?>		   
 		            </ul>
 				<li class="dropdown">
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Batches<b class="caret"></b></a>
 		            <ul class="dropdown-menu">		              
-		              <li><a href="/htdocs/edu/batch/batch_list.php">List</a></li>	
+		              <li><a href="/edu/batch/batch_list.php">List</a></li>	
 		              <?php if($role == 1 || $role == 2)	{?>
-		              <li><a href="/htdocs/edu/batch/batch_form.php">Add</a></li><?php }?>	   
+		              <li><a href="/edu/batch/batch_form.php">Add</a></li><?php }?>	   
 		            </ul><li class="dropdown">
 		            <?php if($role == 1 || $role == 2 || $role == 4)	{?>
 		            <li class="dropdown">
 		           		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Facilitators<b class="caret"></b></a>
 		            		<ul class="dropdown-menu">		              
-		              			<li><a href="/htdocs/edu/facilitators/facilitators_list.php">List</a></li>	
+		              			<li><a href="/edu/facilitators/facilitators_list.php">List</a></li>	
 		              			<?php if($role == 1 || $role == 2)	{?>
-		              			<li><a href="/htdocs/edu/facilitators/facilitators_form.php">Add</a></li><?php }?>	   
+		              			<li><a href="/edu/facilitators/facilitators_form.php">Add</a></li><?php }?>	   
 		            		</ul>
 		            </li>
 		            <li class="dropdown">
 		            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports<b class="caret"></b></a>
 		            <ul class="dropdown-menu">
-		              <li><a href="/htdocs/edu/reports/courses.php">Course</a></li>
-		              <li><a href="/htdocs/edu/reports/batches.php">Batch</a></li>		   
+		              <li><a href="/edu/reports/courses.php">Course</a></li>
+		              <li><a href="/edu/reports/batches.php">Batch</a></li>		   
 		            </ul>
 		            </li>
 		            <?php }?>		   
 		            </ul>
 		            <label class="navbar-search pull-right" action="">
-		          <?php echo "Welcome ".$user." ";?><br><a href="/htdocs/edu/user/logout.php">Logout</a>&nbsp
+		          <?php echo "Welcome ".$user." ";?><br><a href="/edu/user/logout.php">Logout</a>&nbsp
 		          <?php if($_SESSION['role'] == 1)	{?>
-		          |&nbsp<a href="/htdocs/edu/admin">Admin Panel</a><?php 
+		          |&nbsp<a href="/edu/admin">Admin Panel</a><?php 
 		          }
 		          else {?>
-		          |&nbsp<a href="/htdocs/edu/user/profile.php?id=<?php echo $ida;?>">My Profile</a><?php }?>
+		          |&nbsp<a href="/edu/user/profile.php?id=<?php echo $ida;?>">My Profile</a><?php }?>
 		        </label>
       </div><!-- /.nav-collapse -->
     </div><!-- /.container -->

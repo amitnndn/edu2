@@ -61,6 +61,9 @@ Batch Report
 		$totalfees = 0;
 		$fee_recieved = 0;
 		$fee_remainings = 0;
+		$totalfee = 0;
+		$total_fee_recieved = 0;
+		$total_fee_remaining = 0;
 		while($info3 = mysql_fetch_array($sql3))	{
 			$totalfees 	= $n*$info3['fees_total'];
 			$fee_recieved += $info3['fees_paid'];

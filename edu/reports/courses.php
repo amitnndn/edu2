@@ -20,7 +20,8 @@ Course Report
 <h1 style="text-align: center;">COURSE REPORTS</h1><hr>
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 100px 0 225px; max-width:500px; border-color: #fcfcfc; float:left;"></div>
-<div id="container1" style="min-width: 310px; height: 400px; margin: 0 auto; max-width:500px;"></div><br><br>
+<div id="container1" style="float: left;min-width: 400px; height: 400px; margin: 0 auto; max-width:500px;"></div><br><br>
+<div id="clear" style="clear: both;"></div>
 <div style="text-align:center"><a href="date_reports.php">Generate Reports Based on Dates</a></div>
 <?php 
 	include_once('../database.php');

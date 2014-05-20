@@ -12,6 +12,15 @@
 	$subdomain = $_POST['subdomain'];
 	$dbname = $_POST['dbname'];
 	$phone = $_POST['phone'];
+	$pre_query = "select * from clients where subdomain = '$subdomain';";
+	$sql = mysql_query($pre_query);
+	if($sql){
+		$n = mysql_num_rows($sql);
+		if($n >=1){
+			echo "Sub Domain is taken. Please choose another subdomain.";
+			exit;
+		}
+	}
 	$query = "insert into clients values(default,'$first_name','$last_name','$email','$subdomain','$password','$dbname');";	
 	$response = $a->execute_query($query);
 	if($response == 1){

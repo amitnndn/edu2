@@ -22,11 +22,11 @@
 	$address = $_POST['address'];
 	$sql = mysql_query("insert into student values(default,'$firstname','$lastname','$phone','$email','$address');");
 	if($sql)	{
-		$sql1 = mysql_query("select * from students");
-		$info = mysql_fetch_array($sql1);
+		/*$sql1 = mysql_query("select * from students");
+		$info = mysql_fetch_array($sql1);*/
 		$sql2 = mysql_query("select * from student;");	
 		while($info1 = mysql_fetch_array($sql2))	{
-			$thisid = $info1['Auto-increment'] - 1;
+			//$thisid = $info1['Auto-increment'] - 1;
 		}
 		echo "<div class = 'alert alert-success'>Student Added</div>";
 ?>

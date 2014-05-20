@@ -9,7 +9,7 @@
 			}
 			.client_register{
 				width: 40%;
-				padding: 5px;
+				padding: 10px;
 				background-color: lightgrey;
 				-webkit-border-radius: 5px;
 				-moz-border-radius: 5px;
@@ -64,7 +64,7 @@
 	<body>
 		<?php
 			$subdomain = array_shift(explode(".",$_SERVER['HTTP_HOST']));
-			echo $subdomain;
+			//echo $subdomain;
 			if($subdomain == "edu")	{
 		?>
 		<h1>Registration Form</h1>
@@ -88,17 +88,22 @@
 			$(document).ready(function(){
 				$(".submit").on('click',function(e){
 					e.preventDefault();
-					var first_name = $(".first_name").val();
-					var last_name = $(".last_name").val();
-					var email = $(".email").val();
-					var subdomain = $(".subdomain").val();
-					var password = $(".password").val();
-					var phone = $(".phone").val();
+					var first_name = $.trim($(".first_name").val());
+					var last_name = $.trim($(".last_name").val());
+					var email = $.trim($(".email").val());
+					var subdomain = $.trim($(".subdomain").val());
+					var password = $.trim($(".password").val());
+					var phone = $.trim($(".phone").val());
 					var dbname = subdomain + "_edu";
 				 	var final_subdomain = subdomain + ".edu.com";
 				 	$.post("register_client.php",{first_name : first_name, last_name : last_name, dbname : dbname, phone : phone, email : email, subdomain : final_subdomain, password : password},function(data){
-				 		alert(data);
-				 		window.location = "http://"+final_subdomain;
+				 		if(data == "Success"){
+					 		alert(data);
+					 		window.location = "http://"+final_subdomain;
+					 	}
+					 	else{
+					 		alert(data);
+					 	}
 				 	});
 				});
 			});
