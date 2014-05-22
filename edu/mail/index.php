@@ -23,6 +23,7 @@ $mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl
 $mail->From = 'amit.nndn45@gmail.com';
 $mail->FromName = 'EDU Admin';
 $id = $_GET['id'];
+$email = array();
 include_once("../database.php");
 $sql = mysql_query("select * from batch_students where batch_id = $id;");
 $i = 0;
@@ -58,6 +59,7 @@ while($info = mysql_fetch_array($sql))	{
 }
 $n = $i - 1;
 for($i = 0; $i <= sizeof($emailid); $i++)	{
+	echo $emailid[$i];
 	$mail->WordWrap = 50;                                // Set word wrap to 50 characters
 	//$mail->AddAttachment('/var/tmp/file.tar.gz');         // Add attachments
 	//$mail->AddAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name

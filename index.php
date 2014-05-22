@@ -6,18 +6,19 @@
 			body{
 				max-width: 960px;
 				margin: 0 auto;
+				font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 			}
 			.client_register{
-				width: 40%;
-				padding: 10px;
-				background-color: lightgrey;
+				width: 62%;
+				padding: 5px;
+				background-color: #FCFCFC;
 				-webkit-border-radius: 5px;
 				-moz-border-radius: 5px;
 				border-radius: 5px;
-				height: 240px;
+				height: 255px;
 			}
 			.first_name, .last_name, .email, .subdomain, .password, .phone{
-				width: 50%;
+				width: 40%;
 			}
 			.input_field{
 				float: left;
@@ -29,7 +30,7 @@
 			}
 			.input_text{
 				float: left;
-				width: 20%;
+				width: 15%;
 				padding: 5px;
 			}
 			.clear{
@@ -71,8 +72,8 @@
 		<form method="post" class="client_register">
 			<div class="input_text">First Name:</div><div class="input_field"><input class="first_name" type="text" /></div><div class="clear"></div>
 			<div class="input_text">Last Name: </div><div class="input_field"><input class="last_name" type="text"/></div><div class="clear"></div>
-			<div class="input_text">Email: </div><div class="input_field"><input class="email" type="email"/></div><div class="clear"></div>
-			<div class="input_text">Subdomain: </div><div class="input_field"><input class="subdomain" type="text"/>.edu.com</div><div class="clear"></div>
+			<div class="input_text">Email: </div><div class="input_field"><input class="email" type="email"/><small>&nbsp;This will be your login id for your app</small></div><div class="clear"></div>
+			<div class="input_text">Subdomain: </div><div class="input_field"><input class="subdomain" type="text"/><small>.edu.com</small></div><div class="clear"></div>
 			<div class="input_text">Password: </div><div class="input_field"><input class="password" type="password"/></div><div class="clear"></div>
 			<div class="input_text">Phone: </div><div class="input_field"><input class="phone" type="number" /></div><div class="clear"></div>
 			<div class="input_text"></div><div class="input_field"><input type="submit" value="Register" class="submit"/></div>
@@ -99,6 +100,9 @@
 				 	$.post("register_client.php",{first_name : first_name, last_name : last_name, dbname : dbname, phone : phone, email : email, subdomain : final_subdomain, password : password},function(data){
 				 		if(data == "Success"){
 					 		alert(data);
+					 		$.post("create_roles.php",{db_name : dbname},function(e){
+					 			console.log(e);
+					 		});
 					 		window.location = "http://"+final_subdomain;
 					 	}
 					 	else{

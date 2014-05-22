@@ -14,6 +14,10 @@ class duplicatetables{
 	        mysql_query('CREATE TABLE `' . $targetDB . '`.`' . $row[0] . '` LIKE `' . $sourceDB . '`.`' . $row[0] . '`') or die(mysql_error());
 	        mysql_query('OPTIMIZE TABLE `' . $targetDB . '`.`' . $row[0] . '`') or die(mysql_error());
 	    }
+	    mysql_query("insert into ".$targetDB.".roles (1,'Super Admin')");
+        mysql_query("insert into ".$targetDB.".roles (2,'HoO')");
+        mysql_query("insert into ".$targetDB.".roles (3,'Reception')");
+	    mysql_query("insert into ".$targetDB.".roles (4,'Finance')");
 	} // end duplicateTables()
 }
 
